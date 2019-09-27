@@ -54,9 +54,14 @@ function clearList() {
 
 function sortBy() {
     const filterVal = filters.value.toLowerCase();
-
-    ulList.querySelectorAll('.flex').forEach(
-
+    ulList.querySelectorAll('li').forEach(
+    function (task) {
+        const listedValue = task.textContent;
+        if (listedValue.toLowerCase().indexOf(filterVal) != -1){
+            task.style.display='block';
+        }else {
+            task.style.display='none';
+        }
+    }
     )
-
 }
