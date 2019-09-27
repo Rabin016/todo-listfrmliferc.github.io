@@ -12,7 +12,7 @@ function loadEventListeners() {
     ulList.addEventListener('click', delTask);
 
     filters.addEventListener('keyup', sortBy);
-};
+}
 
 function addToListFung(e) {
     const inputValue = input.value;
@@ -34,13 +34,13 @@ function addToListFung(e) {
     }
 
     e.preventDefault();
-};
+}
 
 function delTask(e) {
     if (e.target.parentElement.classList.contains('flex')) {
         e.target.parentElement.remove();
-    };
-};
+    }
+}
 
 function delAlart() {
     alartDiv.removeChild(alartDiv.firstChild);
@@ -49,8 +49,8 @@ function delAlart() {
 function clearList() {
     while (ulList.firstChild) {
         ulList.removeChild(ulList.firstChild);
-    };
-};
+    }
+}
 
 function sortBy() {
     const filterVal = filters.value.toLowerCase();
@@ -59,4 +59,4 @@ function sortBy() {
 
     )
 
-};
+}
