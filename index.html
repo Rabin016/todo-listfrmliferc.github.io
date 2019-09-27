@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="tailwind.css">
+    <script src="https://kit.fontawesome.com/1c8b96d87c.js" crossorigin="anonymous"></script>
+    <title>To-Do List</title>
+</head>
+
+<body class="text-gray-800">
+    <div class="container lg:w-2/5 md:w-3/5">
+        <h3 class="text-center font-bold text-3xl text-blue-500 underline ">To-do List</h3>
+        <div class="border rounded border-blue-500 p-5 shadow-lg mt-10">
+            <form id="todoForm" action="#">
+                <label class="font-bold text-xl" for="taskInput">New Task: </label>
+                <input class="w-full border-b border-blue-700 rounded mt-3" type="text" value="" name="taskInput"
+                    id="taskInput" placeholder="Enter your Task">
+                <input
+                    class="py-1 px-2 bg-blue-500 rounded text-gray-100 mt-3 shadow-lg hover:bg-blue-600 cursor-pointer"
+                    type="submit" value="Add-to list">
+            </form>
+
+            <div id="alart" class="my-5"></div>
+
+            <h5 class="font-bold text-xl mt-5">To-do List:</h5>
+            <div>
+                <label for="filter"></label>
+                <input class="w-full border-b border-blue-700 rounded mb-5" type="text" name="filter" id="filter"
+                    placeholder="Filter To-do list">
+
+                <ul id="allList" class="mb-5">
+
+                </ul>
+                <a class="border border-blue-500 bg-gray-200 text-blue-700 font-semibold px-2 py-1 hover:text-gray-200 hover:bg-blue-100 hover:text-blue-600 hover:shadow-lg rounded"
+                    href="#" onclick="clearList()">Clear list</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
