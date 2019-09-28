@@ -64,7 +64,26 @@ function addToListFung(e) {
 function delTask(e) {
     if (e.target.parentElement.classList.contains('flex')) {
         e.target.parentElement.remove();
+
+        delSingleFromLS(e.target.parentElement);
+
     }
+}
+
+function delSingleFromLS(taskList) {
+    let oldTask;
+    if (localStorage.getItem('task')===null) {
+        oldTask=[];
+    }else {
+        oldTask=JSON.parse(localStorage.getItem('task'));
+    }
+    oldTask.forEach(function (task, index) {
+        if (taskList.textContent === task){
+            oldTask.splice(index, 1);
+        }
+        console.log(task)
+    });
+    localStorage.setItem('task', JSON.stringify(oldTask));
 }
 
 function delAlart() {
@@ -74,6 +93,7 @@ function delAlart() {
 function clearList() {
     while (ulList.firstChild) {
         ulList.removeChild(ulList.firstChild);
+        localStorage.clear();
     }
 }
 
