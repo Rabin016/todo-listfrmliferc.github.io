@@ -55,18 +55,14 @@ function addToListFung(e) {
         alartDiv.innerHTML = `<p class="bg-green-200 text-green-700 py-1 px-2 rounded font-semibold flex justify-between">Your new task has been listed in To-do List<i class="fas fa-times-circle my-auto text-gray-700 cursor-pointer hover:text-green-800" onclick="delAlart()"></i></p>`;
 
         input.value = '';
-
     }
-
     e.preventDefault();
 }
 
 function delTask(e) {
     if (e.target.parentElement.classList.contains('flex')) {
-        e.target.parentElement.remove();
-
         delSingleFromLS(e.target.parentElement);
-
+        e.target.parentElement.remove();
     }
 }
 
@@ -77,11 +73,12 @@ function delSingleFromLS(taskList) {
     }else {
         oldTask=JSON.parse(localStorage.getItem('task'));
     }
-    oldTask.forEach(function (task, index) {
-        if (taskList.textContent === task){
+    oldTask.forEach(
+        function (task, index) {
+        if (taskList.innerText === task){
             oldTask.splice(index, 1);
+            console.log(typeof (task));
         }
-        console.log(task)
     });
     localStorage.setItem('task', JSON.stringify(oldTask));
 }
