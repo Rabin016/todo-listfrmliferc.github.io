@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="tailwind.css">
     <script src="https://kit.fontawesome.com/1c8b96d87c.js" crossorigin="anonymous"></script>
     <title>To-Do List</title>
+    <link rel="icon" type="image/ico" href="img/My-Logo-ico-64.ico">
 </head>
 
 <body class="text-gray-800">
@@ -31,17 +32,17 @@
                 <input class="w-full border-b border-blue-700 rounded mb-5" type="text" name="filter" id="filter"
                     placeholder="Filter To-do list">
 
-                <ul id="allList" class="mb-5">
+                <ul id="allList" class="mb-5"></ul>
 
-                </ul>
                 <a class="border border-blue-500 bg-gray-200 text-blue-700 font-semibold px-2 py-1 hover:text-gray-200 hover:bg-blue-100 hover:text-blue-600 hover:shadow-lg rounded"
                     href="#" onclick="clearList()">Clear list</a>
             </div>
-
+            <div class="ml-auto w-1/2 sm:w-1/4 whitespace-no-wrap">
+                <p class="text-gray-600 text-sm md:text-base">Developed By:</p>
+                <a href="https://github.com/Rabin016"><img src="img/My%20Logo.png" alt="logo"></a>
+            </div>
         </div>
     </div>
-
-
     <script src="script.js"></script>
 </body>
 
